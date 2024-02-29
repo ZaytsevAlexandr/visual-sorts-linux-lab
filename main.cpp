@@ -151,6 +151,8 @@ void heapSort()
 
 int main() {
 
+    Sleep(5000);
+
     for (int i = 0; i < 80; i++) {
         recHs[i] = (i + 1) * 7;
     }
@@ -162,10 +164,6 @@ int main() {
         recHs[i] = recHs[g];
         recHs[g] = s;
     }
-
-    //for (int i = 0; i < n; i++) {
-    //    recHs[i] = (rand() % 500);
-    //}
     while (window.isOpen()) {
         sf::Event event;
 
@@ -179,12 +177,15 @@ int main() {
         }
         if (!sorted) {
             dispSort(0);
-
-            // insertionSort();
-            // bubbleSort();
-            // heapSort();
-            // quickSort();
-            selectionSort();
+            // Для работы данного кода необходимо раскомментить одну из строк ниже. 
+            // Пожалуйста, используйте лишь одну сортировку для корректной работы. 
+            // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
+                                      // insertionSort();
+                                      // bubbleSort();
+                                      // heapSort();
+                                      // quickSort();
+                                      // selectionSort();
+            // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ // 
         }
 
     }
