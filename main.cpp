@@ -151,7 +151,8 @@ void heapSort()
 
 int main() {
 
-    Sleep(5000);
+#define SORT_MODE 5
+
 
     for (int i = 0; i < 80; i++) {
         recHs[i] = (i + 1) * 7;
@@ -177,15 +178,19 @@ int main() {
         }
         if (!sorted) {
             dispSort(0);
-            // Для работы данного кода необходимо раскомментить одну из строк ниже. 
-            // Пожалуйста, используйте лишь одну сортировку для корректной работы. 
-            // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
-                                      // insertionSort();
-                                      // bubbleSort();
-                                      // heapSort();
-                                      // quickSort();
-                                      // selectionSort();
-            // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ // 
+#if SORT_MODE==1
+            insertionSort();
+#elif SORT_MODE==2
+            bubbleSort();
+#elif SORT_MODE==3
+            heapSort();
+#elif SORT_MODE==4
+            quickSort();
+#elif SORT_MODE==5
+            selectionSort();
+#else
+            return 0;
+#endif
         }
 
     }
